@@ -26,25 +26,10 @@ class OnBoardingActivity : AppCompatActivity() {
         const val INDICATOR_LAYOUT_MARGIN_BOTTOM = 0
     }
 
-    private val introSliderAdapter = IntroSliderAdapter(
-        listOf(
-            IntroSliderData(
-                applicationContext.getString(R.string.onboard_title_one),
-                applicationContext.getString(R.string.onboard_description_one),
-                R.drawable.ic_tomato
-            ),
-            IntroSliderData(
-                applicationContext.getString(R.string.onboard_title_two),
-                applicationContext.getString(R.string.onboard_description_two),
-                R.drawable.ic_hourglass
-            ),
-            IntroSliderData(
-                applicationContext.getString(R.string.onboard_title_three),
-                applicationContext.getString(R.string.onboard_description_three),
-                R.drawable.ic_coffee
-            )
-        )
-    )
+    private val introSliderAdapter: IntroSliderAdapter by lazy{
+        IntroSliderAdapter(getOnBoardList())
+    }
+
     lateinit var binding : ActivityOnboardingBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -139,5 +124,24 @@ class OnBoardingActivity : AppCompatActivity() {
         })
     }
 
+    private fun getOnBoardList(): List<IntroSliderData> {
+        return listOf(
+            IntroSliderData(
+                this.getString(R.string.onboard_title_one),
+                this.getString(R.string.onboard_description_one),
+                R.drawable.ic_tomato
+            ),
+            IntroSliderData(
+                this.getString(R.string.onboard_title_two),
+                this.getString(R.string.onboard_description_two),
+                R.drawable.ic_hourglass
+            ),
+            IntroSliderData(
+                this.getString(R.string.onboard_title_three),
+                this.getString(R.string.onboard_description_three),
+                R.drawable.ic_coffee
+            )
+        )
+    }
 
 }
