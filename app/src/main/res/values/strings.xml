@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MyPomo</string>
+
+    <string name="button_next">PRÓXIMO</string>
+    <string name="button_skip">PULAR</string>
+
+    <!-- OnBoard -->
+    <string name="onboard_title_one">Bem vindo ao MyPomo</string>
+    <string name="onboard_description_one">Você sabe o que é o método pomodoro?</string>
+    <string name="onboard_title_two">Divida seu tempo</string>
+    <string name="onboard_description_two">É uma técnica que consiste na utilização de um cronômetro para dividir o trabalho em períodos de 25 minutos sem distrações</string>
+    <string name="onboard_title_three">Coffe Time</string>
+    <string name="onboard_description_three">Quando o alarme tocar, faça um break até o proxímo alarme na qual voltará com foco total para sua tarefa</string>
+</resources>
