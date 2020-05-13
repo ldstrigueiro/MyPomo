@@ -1,23 +1,22 @@
-package com.example.mypomo
+package com.example.mypomo.ui
 
 import android.content.Intent
 import androidx.viewpager2.widget.ViewPager2
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.util.Log
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
-import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.get
 import androidx.databinding.DataBindingUtil
+import com.example.mypomo.IntroSliderAdapter
+import com.example.mypomo.IntroSliderData
+import com.example.mypomo.R
 import com.example.mypomo.databinding.ActivityOnboardingBinding
 import kotlinx.android.synthetic.main.activity_onboarding.*
 
-class OnBoardingActivity : AppCompatActivity() {
+class OnBoardingActivity : BaseActivity() {
 
     companion object{
         const val INDICATOR_LAYOUT_MARGIN_LEFT = 8
@@ -38,7 +37,9 @@ class OnBoardingActivity : AppCompatActivity() {
     }
 
     private fun initView(){
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_onboarding)
+        binding = DataBindingUtil.setContentView(this,
+            R.layout.activity_onboarding
+        )
         initSlider()
         initIndicators()
         setCurrentIndicator(0)
@@ -77,7 +78,13 @@ class OnBoardingActivity : AppCompatActivity() {
         val layoutParams: ConstraintLayout.LayoutParams =
             ConstraintLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT)
 
-        layoutParams.setMargins(INDICATOR_LAYOUT_MARGIN_LEFT, INDICATOR_LAYOUT_MARGIN_TOP, INDICATOR_LAYOUT_MARGIN_RIGHT, INDICATOR_LAYOUT_MARGIN_BOTTOM)
+        layoutParams.setMargins(
+            INDICATOR_LAYOUT_MARGIN_LEFT,
+            INDICATOR_LAYOUT_MARGIN_TOP,
+            INDICATOR_LAYOUT_MARGIN_RIGHT,
+            INDICATOR_LAYOUT_MARGIN_BOTTOM
+        )
+
         for(i in indicators.indices){
             indicators[i] = AppCompatImageView(applicationContext)
             indicators[i].apply {
